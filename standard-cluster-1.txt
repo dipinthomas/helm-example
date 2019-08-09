@@ -1,0 +1,98 @@
+addonsConfig:
+  horizontalPodAutoscaling: {}
+  httpLoadBalancing: {}
+  kubernetesDashboard:
+    disabled: true
+  networkPolicyConfig:
+    disabled: true
+clusterIpv4Cidr: 10.40.0.0/14
+createTime: '2019-08-09T05:05:03+00:00'
+currentMasterVersion: 1.12.8-gke.10
+currentNodeCount: 3
+currentNodeVersion: 1.12.8-gke.10
+defaultMaxPodsConstraint:
+  maxPodsPerNode: '110'
+endpoint: 35.197.128.162
+initialClusterVersion: 1.12.8-gke.10
+instanceGroupUrls:
+- https://www.googleapis.com/compute/v1/projects/zinc-advice-249304/zones/asia-southeast1-b/instanceGroupManagers/gke-standard-cluster-1-default-pool-c893b707-grp
+- https://www.googleapis.com/compute/v1/projects/zinc-advice-249304/zones/asia-southeast1-c/instanceGroupManagers/gke-standard-cluster-1-default-pool-3571288b-grp
+- https://www.googleapis.com/compute/v1/projects/zinc-advice-249304/zones/asia-southeast1-a/instanceGroupManagers/gke-standard-cluster-1-default-pool-0b4eb80f-grp
+ipAllocationPolicy:
+  clusterIpv4Cidr: 10.40.0.0/14
+  clusterIpv4CidrBlock: 10.40.0.0/14
+  clusterSecondaryRangeName: gke-standard-cluster-1-pods-ba067039
+  servicesIpv4Cidr: 10.44.0.0/20
+  servicesIpv4CidrBlock: 10.44.0.0/20
+  servicesSecondaryRangeName: gke-standard-cluster-1-services-ba067039
+  useIpAliases: true
+labelFingerprint: a9dc16a7
+legacyAbac: {}
+location: asia-southeast1
+locations:
+- asia-southeast1-b
+- asia-southeast1-c
+- asia-southeast1-a
+loggingService: logging.googleapis.com
+masterAuth:
+  clusterCaCertificate: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURDekNDQWZPZ0F3SUJBZ0lRUzlLbkx5ZSs4VjZZRFdrUWhFcEczekFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlRMk5qSm1OREF4TlMwMVpUaGlMVFJpWVdRdFltSTJNeTB5TnpFeU56Y3dNRGt3TUdFdwpIaGNOTVRrd09EQTVNRFF3TlRBMFdoY05NalF3T0RBM01EVXdOVEEwV2pBdk1TMHdLd1lEVlFRREV5UTJOakptCk5EQXhOUzAxWlRoaUxUUmlZV1F0WW1JMk15MHlOekV5Tnpjd01Ea3dNR0V3Z2dFaU1BMEdDU3FHU0liM0RRRUIKQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUURBUWJ6WFdsTHV3SFl3aTg5eFQvNHFscnhyTVlNUW9oYUJBdDhCVUpvdQpZcWdib1JjMytqNWFsVmIrNS9KaHNuSkRVdHlaUENaSStCa1F5YitwOGJrK2JWVXJNOHZmaDRaQmdRclM5OXdBClBLcWhrNnZ1L051cW12c1V1bElaY1diUkdqMG9hcVBTVXA1dlczdEZPeDFlUVd0eEU2TUZPVGNka2RTWFJndDcKM0YzbEVTL1JEaEEyS0hZRE9uaDZCQnp3ZWtKZnNrTU1nU3g1RjJzTTczUWZqOXlsWWhNUGl5YUdxTGtweEJzTgpQZnVBQWZYYWtvdVpOWVlOZnNBQ0NUK3ZOTVJ0UnoxamdnQjl4cVhUTVlnWUluV1pMMUNMYlRicGdxMk50V2Q2CjRDb3BxOTNlNlZoVDBSdDNTczRuSDRLZHRHOFBNKzJ3Rm1pYVg4OThzYkxYQWdNQkFBR2pJekFoTUE0R0ExVWQKRHdFQi93UUVBd0lDQkRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFDRwpqTjZrQzRkbFRKK2xYdkF2TndLWUZubU1FVVZpU0xtVlpsd3Rzc2lZWXNZNkpKQmRseHRjdVVTaFlMeEgvZms5CldXR3ZQeDMycVVWM1gwaVRiQXVwQlpsS0ZPNDFCd2pjUGY2N1huU3crUDE2RURjKzBjL1EyQ2ZaL0M3QzB1ZDIKM3RLTU03bnRsYStMVDVHWUNwOUZ3MDhTZ3FlVEV4VmpNd1JDZE9pcEVkODRrS0ZUWVM4elc4Z2tGM0FDQTgxdApDVVkra1VWY3BXN0o0MHoxc3pnYUxNTUJteEhUMERsOXpoQTFSdjhyR0EyelY1YlZXbFlwMDJpdE5zMGlhU2dzCmQ4MWJYZG1tVFhpZDZ6YmszWXl0ejdpWW1SczJKZ2duTGg1SWdUdmJCeXQ0SDNKMDh2anJnbUNKR1pFajhnM04KR3JFWUxmbHFXZXBBVmRjWXlTK1QKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+masterAuthorizedNetworksConfig: {}
+monitoringService: monitoring.googleapis.com
+name: standard-cluster-1
+network: default
+networkConfig:
+  network: projects/zinc-advice-249304/global/networks/default
+  subnetwork: projects/zinc-advice-249304/regions/asia-southeast1/subnetworks/default
+networkPolicy: {}
+nodeConfig:
+  diskSizeGb: 100
+  diskType: pd-standard
+  imageType: COS
+  machineType: n1-standard-1
+  metadata:
+    disable-legacy-endpoints: 'true'
+  oauthScopes:
+  - https://www.googleapis.com/auth/devstorage.read_only
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/monitoring
+  - https://www.googleapis.com/auth/servicecontrol
+  - https://www.googleapis.com/auth/service.management.readonly
+  - https://www.googleapis.com/auth/trace.append
+  serviceAccount: default
+nodePools:
+- autoscaling: {}
+  config:
+    diskSizeGb: 100
+    diskType: pd-standard
+    imageType: COS
+    machineType: n1-standard-1
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/trace.append
+    serviceAccount: default
+  initialNodeCount: 1
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/zinc-advice-249304/zones/asia-southeast1-b/instanceGroupManagers/gke-standard-cluster-1-default-pool-c893b707-grp
+  - https://www.googleapis.com/compute/v1/projects/zinc-advice-249304/zones/asia-southeast1-c/instanceGroupManagers/gke-standard-cluster-1-default-pool-3571288b-grp
+  - https://www.googleapis.com/compute/v1/projects/zinc-advice-249304/zones/asia-southeast1-a/instanceGroupManagers/gke-standard-cluster-1-default-pool-0b4eb80f-grp
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '110'
+  name: default-pool
+  podIpv4CidrSize: 24
+  selfLink: https://container.googleapis.com/v1/projects/zinc-advice-249304/locations/asia-southeast1/clusters/standard-cluster-1/nodePools/default-pool
+  status: RUNNING
+  version: 1.12.8-gke.10
+selfLink: https://container.googleapis.com/v1/projects/zinc-advice-249304/locations/asia-southeast1/clusters/standard-cluster-1
+servicesIpv4Cidr: 10.44.0.0/20
+status: RUNNING
+subnetwork: default
+zone: asia-southeast1
