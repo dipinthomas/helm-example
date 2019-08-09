@@ -2,12 +2,30 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# App A values.yaml
+persistence
+    storageClassName: ssd
+    size: 2Gi
+
+
+NodeReleaseName: chain-z
+resources:
+  limits:
+    memory: 512Mi
+    cpu: 500m
+  requests:
+    memory: 256Mi
+    cpu: 100m
+
 replicaCount: 1
 
 image:
-  repository: nginx
+  explorer:
+      repository: nginx
   tag: stable
   pullPolicy: IfNotPresent
+
+
 
 imagePullSecrets: []
 nameOverride: ""
