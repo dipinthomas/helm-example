@@ -15,6 +15,7 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "chain-z.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+        release: {{ .Release.Name }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
