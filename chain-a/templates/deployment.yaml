@@ -37,12 +37,6 @@ spec:
         - name: datadir-explorer
           persistentVolumeClaim:
             claimName: {{ .Release.Name }}
-        - name: config
-          secret:
-            secretName: {{ .Release.Name }}
-            items:
-              - key: config
-                path: explorer.cfg
       initContainers:
       containers:
         - name: {{ .Release.Name }}
@@ -58,9 +52,6 @@ spec:
             - name: config
               mountPath: /config
               readOnly: true
-          env:
-            - name: EXPLORER_CFG
-              value: /config/explorer.cfg
           resources:
 {{ toYaml .Values.resources | indent 12 }}
 
