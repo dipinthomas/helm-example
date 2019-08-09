@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "chain-z.fullname" . }}-test-connection"
+  labels:
+{{ include "chain-z.labels" . | indent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['{{ include "chain-z.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
