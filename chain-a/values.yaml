@@ -3,12 +3,13 @@
 # Declare variables to be passed into your templates.
 
 # App A values.yaml
-persistence
-    storageClassName: ssd
-    size: 2Gi
+persistence:
+  storageClassName: ssd
+  size: 2Gi
 
 
 NodeReleaseName: chain-z
+
 resources:
   limits:
     memory: 512Mi
