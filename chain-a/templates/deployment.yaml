@@ -49,9 +49,6 @@ spec:
               mountPath: /datadir
             - name: datadir-explorer
               mountPath: /datadir-explorer
-            - name: config
-              mountPath: /config
-              readOnly: true
           resources:
 {{ toYaml .Values.resources | indent 12 }}
 
