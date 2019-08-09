@@ -1,0 +1,66 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    release: {{ .Release.Name }}
+    # cut out 
+spec:
+  strategy:
+    type: Recreate
+  replicas: 1
+  selector:
+    matchLabels:
+      release: {{ .Release.Name }}
+      # cut out 
+  template:
+    metadata:
+      labels:
+        release: {{ .Release.Name }}
+        # cut out 
+    spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: release
+                    operator: In
+                    values:
+                      - {{ .Values.NodeReleaseName }}
+              topologyKey: "kubernetes.io/hostname"
+      volumes:
+        - name: datadir
+          persistentVolumeClaim:
+            claimName: {{ .Values.NodeReleaseName }}
+        - name: datadir-explorer
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}
+        - name: config
+          secret:
+            secretName: {{ .Release.Name }}
+            items:
+              - key: config
+                path: explorer.cfg
+      initContainers:
+      containers:
+        - name: {{ .Release.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            # cut out 
+          volumeMounts:
+            - name: datadir
+              mountPath: /datadir
+            - name: datadir-explorer
+              mountPath: /datadir-explorer
+            - name: config
+              mountPath: /config
+              readOnly: true
+          env:
+            - name: EXPLORER_CFG
+              value: /config/explorer.cfg
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+

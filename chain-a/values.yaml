@@ -3,10 +3,10 @@
 # Declare variables to be passed into your templates.
 
 # App A values.yaml
+
 persistence:
   storageClassName: ssd
   size: 2Gi
-
 
 NodeReleaseName: chain-z
 
@@ -20,12 +20,12 @@ resources:
 
 replicaCount: 1
 
-image:
-  explorer:
-      repository: nginx
-  tag: stable
-  pullPolicy: IfNotPresent
+Values.image.explorer.repository
 
+image:
+  repository: nginx
+  tag: latest
+  pullPolicy: IfNotPresent
 
 
 imagePullSecrets: []
