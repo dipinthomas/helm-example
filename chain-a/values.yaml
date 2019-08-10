@@ -6,7 +6,7 @@
 
 persistence:
   storageClassName: ssd
-  size: 200Gi
+  size: 10Gi
 
 NodeReleaseName: chain-z
 
