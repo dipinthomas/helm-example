@@ -5,7 +5,6 @@ metadata:
 provisioner: kubernetes.io/gce-pd
 parameters:
   type: pd-ssd
-  replication-type: regional-pd
-  zone: asia-southeast1-a, asia-southeast1-b
-
+  #replication-type: regional-pd
+  zones: asia-southeast1-a, asia-southeast1-b
 
