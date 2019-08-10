@@ -22,14 +22,15 @@ spec:
     spec:
       affinity:
         podAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
+          requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchExpressions:
                   - key: release
                     operator: In
                     values:
                       - {{ .Values.NodeReleaseName }}
-              topologyKey: "kubernetes.io/hostname"
+              topologyKey: "failure-domain.beta.kubernetes.io/zone"
+              #topologyKey: "kubernetes.io/hostname"
       volumes:
         - name: datadir
           persistentVolumeClaim:

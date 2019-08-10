@@ -1,30 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "chain-z.fullname" . }}
+  name: {{ include "cpu-high.fullname" . }}
   labels:
-{{ include "chain-z.labels" . | indent 4 }}
+{{ include "cpu-high.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "chain-z.name" . }}
+      app.kubernetes.io/name: {{ include "cpu-high.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "chain-z.name" . }}
+        app.kubernetes.io/name: {{ include "cpu-high.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
-        release: {{ .Release.Name }}
+        #        release: {{ .Release.Name }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      volumes:
-       - name: datadir
-         persistentVolumeClaim:
-           claimName: {{ .Release.Name  }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -41,9 +37,6 @@ spec:
             httpGet:
               path: /
               port: http
-          volumeMounts:
-            - name: datadir
-              mountPath: /datadir
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

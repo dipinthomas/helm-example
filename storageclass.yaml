@@ -6,5 +6,15 @@ provisioner: kubernetes.io/gce-pd
 parameters:
   type: pd-ssd
   #replication-type: regional-pd
-  zones: asia-southeast1-a, asia-southeast1-b
+  #zones: asia-southeast1-a, asia-southeast1-b
+---
 
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: ssd-all
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-ssd
+  replication-type: regional-pd
+  zones: asia-southeast1-a, asia-southeast1-b
